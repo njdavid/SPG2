@@ -60,17 +60,38 @@
 				'merchantMessageIdentification' => 'njd_' . Uuid::v4(),
 				'merchantMessageDescription' => 'expt OTA',
 				'productAmount' => [
-							   'amount' => '5.50',
+							   'amount' => '17.90',
 							   'currency' => 'EUR'
 						   ],
 				'productExpeditionAmount' => [
 								 'amount' => '0.31',
 								 'currency' => 'EUR'
-							     ]
-/*
-	   ,'purchaseSummaryIndicator': false,
-	   'purchaseAvailableIndicator': false
-*/
+							     ],
+				'purchaseSummaryIndicator': false,
+				'purchaseSummary': {
+							'purchaseSummaryDetail': [
+											{
+												'DetailOrder': 1
+												'DetailQuantity': 3
+												'DetailDescription': 'Sopa'
+												'DetailAmount': 2.20
+											},
+											{
+												'DetailOrder': 2
+												'DetailQuantity': 2
+												'DetailDescription': 'Prato principal'
+												'DetailAmount': 5.00
+											},					
+											{
+												'DetailOrder': 3
+												'DetailQuantity': 1
+												'DetailDescription': 'Café'
+												'DetailAmount': 1.30
+											},					
+										 ]
+				},
+				'purchaseAvailableIndicator': true
+
 			];
 
 	}
