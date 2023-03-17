@@ -60,7 +60,7 @@
 				'merchantMessageIdentification' => 'njd_' . Uuid::v4(),
 				'merchantMessageDescription' => 'expt OTA',
 				'productAmount' => [
-							   'amount' => '11.00',
+							   'amount' => '5.50',
 							   'currency' => 'EUR'
 						   ],
 				'productExpeditionAmount' => [
