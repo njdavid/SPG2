@@ -50,7 +50,7 @@
 		*/
 
 
-		$array = [ 
+		$array = [
 				'returnStatus' => [
 							'status' => 'SUCCESS',
 							'statusCode' => '000',
@@ -58,7 +58,7 @@
 							'statusDescription' => 'Status Description: Sucesso 000'
 						  ],
 				'merchantMessageIdentification' => 'njd_' . Uuid::v4(),
-				'merchantMessageDescription' => 'expt OTA',
+				'merchantMessageDescription' => 'Exemplo de resposta merchant a QR code valor variavel com consulta de mesa',
 				'productAmount' => [
 							   'amount' => '17.90',
 							   'currency' => 'EUR'
@@ -67,37 +67,36 @@
 								 'amount' => '0.31',
 								 'currency' => 'EUR'
 							     ],
-				'purchaseSummaryIndicator': false,
-				'purchaseSummary': {
-							'purchaseSummaryDetail': [
-											{
-												'DetailOrder': 1
-												'DetailQuantity': 3
-												'DetailDescription': 'Sopa'
-												'DetailAmount': 2.20
-											},
-											{
-												'DetailOrder': 2
-												'DetailQuantity': 2
-												'DetailDescription': 'Prato principal'
-												'DetailAmount': 5.00
-											},					
-											{
-												'DetailOrder': 3
-												'DetailQuantity': 1
-												'DetailDescription': 'Café'
-												'DetailAmount': 1.30
-											},					
+				'purchaseSummaryIndicator' => true,
+				'purchaseSummary' => [
+							'purchaseSummaryDetail' => [
+											[
+												'detailOrder' => 1,
+												'detailQuantity' => 3,
+												'detailDescription' => 'Sopa',
+												'detailAmount' => 2.20
+											],
+											[
+												'detailOrder' => 2,
+												'detailQuantity' => 2,
+												'detailDescription' => 'Prato principal',
+												'detailAmount' => 5.00
+											],
+											[
+												'detailOrder' => 3,
+												'detailQuantity' => 1,
+												'detailDescription' => 'Cafe',
+												'detailAmount' => 1.30
+											]
 										 ]
-				},
-				'purchaseAvailableIndicator': true
-
+						    ],
+				'purchaseAvailableIndicator' => true
 			];
 
 	}
 	else
 	{
-		$array = [ 
+		$array = [
 				'returnStatus' => [
 							'status' => 'QRCODE_OUT_OF_STOCK',
 							'statusCode' => '002',
