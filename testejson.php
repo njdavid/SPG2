@@ -47,7 +47,7 @@
                 status: {"SUCCESS", "TECHNICAL_ERROR", "BAD_REQUEST", "QRCODE_NOT_FOUND", "QRCODE_UNAVAILABLE", "QRCODE_EXPIRED", "QRCODE_OUT_OF_STOCK"}                                                                                                                                                                                             
         */                                                                                                                                                                                                                                                                                                                                           
 
-        if ((true) && (!empty($body)) && (json_decode($body)->terminalCode == "55711"))                                                                                                                                                                                                                                                              
+        if ((true) || ((!empty($body)) && (json_decode($body)->terminalCode == "55711")))
         {                                                                                                                                                                                                                                                                                                                                            
 	        $array = [ 'returnStatus' => [
         	                               'status' => 'SUCCESS',
