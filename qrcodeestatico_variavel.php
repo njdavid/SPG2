@@ -45,45 +45,45 @@
 	if ((true) || ((!empty($body)) && (json_decode($body)->terminalCode == "55711")))
 	{
 		/*
-				Doc SIBS versao preliminar:
-				status: {"SUCCESS", "TECHNICAL_ERROR", "BAD_REQUEST", "QRCODE_NOT_FOUND", "QRCODE_UNAVAILABLE", "QRCODE_EXPIRED", "QRCODE_OUT_OF_STOCK"}
+			Doc SIBS versao preliminar:
+			status: {"SUCCESS", "TECHNICAL_ERROR", "BAD_REQUEST", "QRCODE_NOT_FOUND", "QRCODE_UNAVAILABLE", "QRCODE_EXPIRED", "QRCODE_OUT_OF_STOCK"}
 		*/
 
 
 		$array = [ 
-					'returnStatus' => [
-										'status' => 'SUCCESS',
-										'statusCode' => '000',
-										'statusMessage' => 'Status Message: Sucesso 000',
-										'statusDescription' => 'Status Description: Sucesso 000'
-									 ],
-				   'merchantMessageIdentification' => 'njd_' . Uuid::v4(),
-				   'merchantMessageDescription' => 'expt OTA',
-				   'productAmount' => [
-									   'amount' => '11.00',
-									   'currency' => 'EUR'
-									  ],
-				   'productExpeditionAmount' => [
-												 'amount' => '0.31',
-												 'currency' => 'EUR'
-												]
+				'returnStatus' => [
+							'status' => 'SUCCESS',
+							'statusCode' => '000',
+							'statusMessage' => 'Status Message: Sucesso 000',
+							'statusDescription' => 'Status Description: Sucesso 000'
+						  ],
+				'merchantMessageIdentification' => 'njd_' . Uuid::v4(),
+				'merchantMessageDescription' => 'expt OTA',
+				'productAmount' => [
+							   'amount' => '11.00',
+							   'currency' => 'EUR'
+						   ],
+				'productExpeditionAmount' => [
+								 'amount' => '0.31',
+								 'currency' => 'EUR'
+							     ]
 /*
 	   ,'purchaseSummaryIndicator': false,
 	   'purchaseAvailableIndicator': false
 */
-				];
+			];
 
 	}
 	else
 	{
 		$array = [ 
-					'returnStatus' => [
-										'status' => 'QRCODE_OUT_OF_STOCK',
-										'statusCode' => '002',
-										'statusMessage' => 'Status Message: QRCODE_NOT_FOUND 001',
-										'statusDescription' => 'Status Description: QRCODE_NOT_FOUND 001'
-									 ]
-				 ];
+				'returnStatus' => [
+							'status' => 'QRCODE_OUT_OF_STOCK',
+							'statusCode' => '002',
+							'statusMessage' => 'Status Message: QRCODE_NOT_FOUND 001',
+							'statusDescription' => 'Status Description: QRCODE_NOT_FOUND 001'
+						  ]
+			];
 	}
 
 	header('Content-Type: application/json; charset=utf-8');
